@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interaction", "InventorThumbnailAddin\Interaction\Interaction.csproj", "{D0457760-1554-4CD2-BAC2-F3FFA782B68A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugPluginLocally", "InventorThumbnailAddin\DebugPluginLocally\DebugPluginLocally.csproj", "{3877ADF4-6518-48D1-8B7B-D0728170D76C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventorThumbnailAddinPlugin", "InventorThumbnailAddin\InventorThumbnailAddinPlugin\InventorThumbnailAddinPlugin.csproj", "{C6BC818F-CA05-44E1-8271-9216882F8523}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0457760-1554-4CD2-BAC2-F3FFA782B68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0457760-1554-4CD2-BAC2-F3FFA782B68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0457760-1554-4CD2-BAC2-F3FFA782B68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0457760-1554-4CD2-BAC2-F3FFA782B68A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3877ADF4-6518-48D1-8B7B-D0728170D76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3877ADF4-6518-48D1-8B7B-D0728170D76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3877ADF4-6518-48D1-8B7B-D0728170D76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3877ADF4-6518-48D1-8B7B-D0728170D76C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BC818F-CA05-44E1-8271-9216882F8523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BC818F-CA05-44E1-8271-9216882F8523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BC818F-CA05-44E1-8271-9216882F8523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BC818F-CA05-44E1-8271-9216882F8523}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B63E01DF-C25E-408D-983C-AF0A5BA330E2}
+	EndGlobalSection
+EndGlobal

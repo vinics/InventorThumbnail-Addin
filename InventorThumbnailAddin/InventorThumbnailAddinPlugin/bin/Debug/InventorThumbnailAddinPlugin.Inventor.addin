@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Addin Type="Plugin">
+  <ClassId>{c079e3b2-a318-4a6a-93a9-35e8ff2fb000}</ClassId>
+  <ClientId>{c079e3b2-a318-4a6a-93a9-35e8ff2fb000}</ClientId>
+  <DisplayName>InventorThumbnailAddinPlugin</DisplayName>
+  <Description>a InventorThumbnailAddinPlugin</Description>
+  <Assembly>InventorThumbnailAddinPlugin.dll</Assembly>
+</Addin>

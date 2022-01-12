@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity name="InventorThumbnailAddinPlugin" version="1.0.0.0"></assemblyIdentity>
+  <clrClass clsid="{c079e3b2-a318-4a6a-93a9-35e8ff2fb000}" progid="InventorThumbnailAddinPlugin.PluginServer" threadingModel="Both" name="InventorThumbnailAddinPlugin.PluginServer"></clrClass>
+  <file name="InventorThumbnailAddinPlugin.dll" hashalg="SHA1"></file>
+</assembly>

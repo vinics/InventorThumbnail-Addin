@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail App</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+
+      h1{
+        margin: 25px 0px;
+      }
+
+      h2{
+        margin: 25px 0px;
+      }
+
+      form{
+        display: none;
+      }
+
+      .dropBox {
+        width: 300px;
+        height: 300px;
+        background-color: lightgray;
+        border-radius: 20px;
+        border: 5px dashed gray;
+
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 8em;
+
+        font-weight: bold;
+        color: gray;
+        margin-bottom: 50px;
+      }
+
+      .hasFile{
+        border: 5px solid purple;
+      }
+
+      .thumbnailContainer{
+        display: flex;
+        flex-flow: column nowrap;
+        list-style: none;
+      }
+
+      li {
+        display: flex;
+        margin: 1em 0;
+      }
+
+      img{
+        width: 250px;
+        height: 250px;
+      }
+
+    </style>
+
+</head>
+<body class=container>
+    <h1>Thumbnail App</h1>
+
+    <div class="dropBox" id="zone">
+        Drop your file here
+    </div>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="avatar">
+      <input type="submit" value="Send">
+    </form>
+
+    <hr>
+
+    <div>
+      <h2>Results</h2>
+
+      <ul class="thumbnailContainer">
+        <% data.forEach(element => { %>
+          <li><%= element.title  %>
+          <img src="<%= element.url %>">
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <script defer>
+      const dropZoneElement = document.querySelector("div");
+      const formElement = document.querySelector("form");
+      const inputElement = document.querySelector("input");
+
+      dropZoneElement.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZoneElement.classList.add("hasFile");
+      });
+
+      ["dragleave", "dragend"].forEach(type => {
+        dropZoneElement.addEventListener(type, e => {
+          dropZoneElement.classList.remove("hasFile");
+        })
+      });
+
+      dropZoneElement.addEventListener("drop", e => {
+        e.preventDefault();
+
+        const file = e.dataTransfer.files[0];
+
+        if (e.dataTransfer.files.length) {
+
+          inputElement.files = e.dataTransfer.files;
+          formElement.submit();
+        }
+
+        dropZoneElement.classList.remove("hasFile");
+
+      })
+
+      formElement.addEventListener('submit', e => {
+
+      })
+
+    </script>
+</body>
+</html>
