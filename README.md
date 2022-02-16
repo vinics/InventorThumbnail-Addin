@@ -7,7 +7,7 @@ Solution to generate thumbnail images from Inventor part files (.ipt) without ne
 ## Requirements
 - Visual Studio
 - Visual Studio Code
-- Conhecimentos de Frontend (HTML/CSS/JS)
+- Frontend (HTML/CSS/JS)
 - Backend (NodeJs)
 - Inventor API
 
