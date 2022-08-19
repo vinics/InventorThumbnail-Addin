@@ -20,11 +20,11 @@ We will use Forge Design Automation API that has the capabilities to communicate
 - Inventor AddIn (Code that executes actions in Inventor Core);
 - Bucket (Storage available for upload/download). 
 
-![Application Structure](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/Publisher.png)
+![Application Structure](https://github.com/vinics/InventorThumbnail-Addin/blob/main/resources/readme/Publisher.png)
 
 ## Workflow
 First we need the Inventor AddIn then we setup Forge for the application's needs. Finally, we will finish the application: logic and interface.
-![Application Workflow](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/dev-workflow.png)
+![Application Workflow](https://github.com/vinics/InventorThumbnail-Addin/blob/main/resources/readme/dev-workflow.png)
 
 > IMPORTANT: This method of development and code are focus on educational purposes, therefore it does not concern about performance, security and scalability
 
@@ -35,7 +35,7 @@ First we need the Inventor AddIn then we setup Forge for the application's needs
 ### Register App on forge platform
 A working account of Forge is necessary to run this application. On Forge website use the "Create App" to register a new Forge API access.
 
-![Forge Platform](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/forge-create-new-app.png)
+![Forge Platform](https://github.com/vinics/InventorThumbnail-Addin/blob/main/resources/readme/forge-create-new-app.png)
 
 ### Add Forge credentials
 After the application register on Forge platform and before running this application a forge credential file must be provided. To do that create a file at *./server/src/config/forgeCredentials.js* with the credential data:
@@ -52,12 +52,12 @@ module.exports = {
 ### Build the Inventor AddIn
 On VsCode, open the solution file and set the "InventorThumbnailAddinPlugin" project as the startup project:
 
-![VS Code - Set as Startup project](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/set-as-startup-project.png)
+![VS Code - Set as Startup project](https://github.com/vinics/InventorThumbnail-Addin/blob/main/resources/readme/set-as-startup-project.png)
 
 
 After the build is complete a bundle file will be created at *@Solution/InventorThumbnailAddin/bin/Debug*:
 
-![The compiled bundled project](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/solution-bundle.png)
+![The compiled bundled project](https://github.com/vinics/InventorThumbnail-Addin/blob/main/resources/readme/solution-bundle.png)
 
 ### Forge authentication
 ***REQUEST***
@@ -81,7 +81,7 @@ After the build is complete a bundle file will be created at *@Solution/Inventor
 
 The result of the request will be an object with three properties (containing the TOKEN we need for the next steps):
 
-![Forge Authentication Response](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/forge-authetication-response.png)
+![Forge Authentication Response](https://github.com/vinics/InventorThumbnail-Addin/blob/main/resources/readme/forge-authetication-response.png)
 
 >IMPORTANT: The received token expires with time, if in the next steps an authentication error occurs, it may be expired. If this occurs authenticate again through the request of this step and replace the new token in the affected request.
 
@@ -245,4 +245,4 @@ At *./server* run the server and drag and drop a ipt file on the aplication:
 npm start
 ```
 
-![Thumbnail application](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/thumbnail_app.png)
+![Thumbnail application](https://github.com/vinics/InventorThumbnail-Addin/blob/main/resources/readme/thumbnail_app.png)
