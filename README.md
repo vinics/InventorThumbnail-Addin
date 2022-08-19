@@ -20,11 +20,11 @@ We will use Forge Design Automation API that has the capabilities to communicate
 - Inventor AddIn (Code that executes actions in Inventor Core);
 - Bucket (Storage available for upload/download). 
 
-![Application Structure](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/17c22ecd-8866-4d7f-a527-19b959cd720a/Publisher.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220112T194302Z&X-Amz-Expires=86400&X-Amz-Signature=0a0c9b7b8921f8bc78b254cd5c932dd61e259124b9156ba780f446d4820c3be2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Publisher.png%22&x-id=GetObject)
+![Application Structure](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/Publisher.png)
 
 ## Workflow
 First we need the Inventor AddIn then we setup Forge for the application's needs. Finally, we will finish the application: logic and interface.
-![Workflow](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e43c0577-668e-4f7b-9df0-61a1390868c5/Publisher%281%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220112T194812Z&X-Amz-Expires=86400&X-Amz-Signature=76392980888caa01eb177595c1fd054dd2317e936c7e3c6171e097d9e1f88a88&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Publisher%281%29.png%22&x-id=GetObject)
+![Application Workflow](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/dev-workflow.png)
 
 > IMPORTANT: This method of development and code are focus on educational purposes, therefore it does not concern about performance, security and scalability
 
@@ -35,7 +35,7 @@ First we need the Inventor AddIn then we setup Forge for the application's needs
 ### Register App on forge platform
 A working account of Forge is necessary to run this application. On Forge website use the "Create App" to register a new Forge API access.
 
-![Forge Platform](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/005b832e-af90-4591-9734-f9c9617d6986/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220112T200420Z&X-Amz-Expires=86400&X-Amz-Signature=408abe3e748efb9d19cfe40aa50e6d90e5b6082ab18c40cb4c8682948a500d83&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![Forge Platform](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/forge-create-new-app.png)
 
 ### Add Forge credentials
 After the application register on Forge platform and before running this application a forge credential file must be provided. To do that create a file at *./server/src/config/forgeCredentials.js* with the credential data:
@@ -52,11 +52,12 @@ module.exports = {
 ### Build the Inventor AddIn
 On VsCode, open the solution file and set the "InventorThumbnailAddinPlugin" project as the startup project:
 
-![VS Code - Set as Startup project](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8d285639-d59e-4225-a112-c732f043b4fa/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220112T200834Z&X-Amz-Expires=86400&X-Amz-Signature=6b0e93a0eacf80d16a96947fb124367a3e58f811f26d5b7aeab963f0010659e8&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![VS Code - Set as Startup project](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/set-as-startup-project.png)
+
 
 After the build is complete a bundle file will be created at *@Solution/InventorThumbnailAddin/bin/Debug*:
 
-![The compiled bundled project](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/692c37ef-5274-4819-8dca-19cad27453ec/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220112T201022Z&X-Amz-Expires=86400&X-Amz-Signature=4b515798e9b32fea7e4b315c263476c57ce66a7a7634da539532d81fbe50d97e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![The compiled bundled project](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/solution-bundle.png)
 
 ### Forge authentication
 ***REQUEST***
@@ -80,7 +81,7 @@ After the build is complete a bundle file will be created at *@Solution/Inventor
 
 The result of the request will be an object with three properties (containing the TOKEN we need for the next steps):
 
-![Forge Authentication Response](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1891eeb4-64b5-4da2-8eac-f87f3a488782/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220112T201439Z&X-Amz-Expires=86400&X-Amz-Signature=64920dce643537100b90e59186b14d921548914f2ceb5575a10443aa77cc501f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![Forge Authentication Response](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/forge-authetication-response.png)
 
 >IMPORTANT: The received token expires with time, if in the next steps an authentication error occurs, it may be expired. If this occurs authenticate again through the request of this step and replace the new token in the affected request.
 
@@ -244,4 +245,4 @@ At *./server* run the server and drag and drop a ipt file on the aplication:
 npm start
 ```
 
-![Thumbnail application](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/055a4f31-93bd-452e-9bb7-a685fc2f7fb4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220112T202340Z&X-Amz-Expires=86400&X-Amz-Signature=0ac8db6154f073dd3e8fc87461c6a439d1eaccb00bf628f42969b525017f9d13&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![Thumbnail application](https://github.com/vinics/InventorThumbnail-Addin/tree/main/resources/readme/thumbnail_app.png)
